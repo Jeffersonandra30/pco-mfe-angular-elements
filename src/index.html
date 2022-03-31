@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AppAngular</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+  <h1 id="result" style="text-align: center" > Give your Vote !!!</h1>
+    
+  <script src="app-root.js"></script>
+  <script>
+      const vote = document.querySelector('app-root');
+      const result = document.querySelector('#result');
+      vote.addEventListener('like', (event)=> {
+          console.log('You Liked Angular ...');
+          result.innerHTML = "Up Vote :  " + event.detail; 
+          console.log(event);
+      });
+      vote.addEventListener('dislike',(event)=> {
+          console.log('You Do not like Angular...');
+          result.innerHTML = "Down Vote:  " + event.detail;
+          console.log(event);
+      });
+  </script>
+</body>
+</html>
